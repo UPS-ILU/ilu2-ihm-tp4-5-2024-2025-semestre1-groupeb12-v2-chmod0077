@@ -26,8 +26,9 @@ public class DialogReservation {
     }
 
     public void handleDateSelectedEvent(LocalDate date) {
-        //TODO
-        throw new UnsupportedOperationException("Not implemented yet");
+        String[] heures = inf.trouverHeureSelonDate(date);
+        frameReservation.jComboBoxHeureValuesUpdated(heures);
+        frameReservation.jComboBoxHeureShowOptions();
     }
 
     public void handleTimeSelectedEvent(String time) {
