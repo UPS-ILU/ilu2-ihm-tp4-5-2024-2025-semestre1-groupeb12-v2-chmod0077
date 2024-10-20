@@ -13,6 +13,10 @@ public class DialogReservation {
 
     private FrameReservation frameReservation;
     private InterfaceNoyauFonctionnel inf;
+    
+    private int jour;
+    private int mois;
+    private String time;
 
     public DialogReservation(InterfaceNoyauFonctionnel inf) {
         this.inf = inf;
@@ -26,19 +30,26 @@ public class DialogReservation {
     }
 
     public void handleDateSelectedEvent(LocalDate date) {
+        this.jour = date.getDayOfMonth();
+        this.mois = date.getMonthValue();
+        
         String[] heures = inf.trouverHeureSelonDate(date);
         frameReservation.jComboBoxHeureValuesUpdated(heures);
         frameReservation.jComboBoxHeureShowOptions();
     }
 
     public void handleTimeSelectedEvent(String time) {
-        //TODO
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.time = time;
+        
+        String[] personnes = inf.trouverPersonnesSelonHeure(time);
+        frameReservation.jComboBoxPersonnesShowOptions();
+        frameReservation.jComboBoxPersonnesValuesUpdated(personnes);
     }
 
     public void handleNumOfPersonsSelectedEvent(int nbPersons) {
-        //TODO
-        throw new UnsupportedOperationException("Not implemented yet");
+        String[] tables = inf.trouverTableDisponible(this.jour, this.mois, nbPersons, this.time);
+        frameReservation.jListTablesValuesUpdated(tables);
+        frameReservation.jListTablesShowOptions();
     }
 
     public void handleTableSelectedEvent(int numTable) {

@@ -8,6 +8,7 @@ import com.github.lgooddatepicker.optionalusertools.DateChangeListener;
 import com.github.lgooddatepicker.zinternaltools.DateChangeEvent;
 import dialog.DialogReservation;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 
 @SuppressWarnings("serial")
 public class FrameReservation extends javax.swing.JFrame {
@@ -31,6 +32,8 @@ public class FrameReservation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialogConfirmation = new javax.swing.JDialog();
+        jLabel5 = new javax.swing.JLabel();
         dateTimePanel = new javax.swing.JPanel();
         datePicker = new com.github.lgooddatepicker.components.DatePicker();
         datePicker.addDateChangeListener(new DateChangeListener(){
@@ -42,20 +45,39 @@ public class FrameReservation extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         nbPersonsPanel = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBoxPersonnes = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         pickTablePanel = new javax.swing.JPanel();
         tablesImage = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListTables = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonAnnuler = new javax.swing.JButton();
+        jButtonValider = new javax.swing.JButton();
+
+        jLabel5.setText("Texte");
+
+        javax.swing.GroupLayout jDialogConfirmationLayout = new javax.swing.GroupLayout(jDialogConfirmation.getContentPane());
+        jDialogConfirmation.getContentPane().setLayout(jDialogConfirmationLayout);
+        jDialogConfirmationLayout.setHorizontalGroup(
+            jDialogConfirmationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogConfirmationLayout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+        jDialogConfirmationLayout.setVerticalGroup(
+            jDialogConfirmationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogConfirmationLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jLabel5)
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        dateTimePanel.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        dateTimePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jComboBoxHeure.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,12 +121,11 @@ public class FrameReservation extends javax.swing.JFrame {
         datePicker.getAccessibleContext().setAccessibleName("");
         datePicker.getAccessibleContext().setAccessibleDescription("");
 
-        nbPersonsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        nbPersonsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "4", "5", "6", "7", "8" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxPersonnes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBoxPersonnesActionPerformed(evt);
             }
         });
 
@@ -117,7 +138,7 @@ public class FrameReservation extends javax.swing.JFrame {
             .addGroup(nbPersonsPanelLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(nbPersonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxPersonnes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -127,22 +148,17 @@ public class FrameReservation extends javax.swing.JFrame {
                 .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jComboBoxPersonnes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
         );
 
-        pickTablePanel.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        pickTablePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         tablesImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Plan_tables.jpg"))); // NOI18N
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jListTables);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,14 +207,19 @@ public class FrameReservation extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("Annuler");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAnnuler.setText("Annuler");
+        jButtonAnnuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAnnulerActionPerformed(evt);
             }
         });
 
-        jButton2.setText("jButton2");
+        jButtonValider.setText("Valider");
+        jButtonValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonValiderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -212,9 +233,9 @@ public class FrameReservation extends javax.swing.JFrame {
                     .addComponent(pickTablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonValider)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addComponent(jButtonAnnuler)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -226,10 +247,11 @@ public class FrameReservation extends javax.swing.JFrame {
                 .addComponent(nbPersonsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(pickTablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)))
+                    .addComponent(jButtonValider)
+                    .addComponent(jButtonAnnuler))
+                .addGap(0, 9, Short.MAX_VALUE))
         );
 
         pack();
@@ -237,15 +259,43 @@ public class FrameReservation extends javax.swing.JFrame {
 
     private void jComboBoxHeureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxHeureActionPerformed
         //jComboBoxHeure.getSelectedItem();
+        dialog.handleTimeSelectedEvent((String)jComboBoxHeure.getSelectedItem());
     }//GEN-LAST:event_jComboBoxHeureActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    public void jComboBoxPersonnesValuesUpdated(String[] personnes) {
+        jComboBoxPersonnes.setModel(new DefaultComboBoxModel(personnes));
+    }
+    
+    public void jComboBoxPersonnesShowOptions() {
+        jComboBoxPersonnes.setEditable(true);
+    }
+    
+    private void jComboBoxPersonnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPersonnesActionPerformed
+        dialog.handleNumOfPersonsSelectedEvent((int)jComboBoxPersonnes.getSelectedItem());
+    }//GEN-LAST:event_jComboBoxPersonnesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jListTablesValuesUpdated(String[] tables) {
+        DefaultListModel listModel = new DefaultListModel();
+        
+        for( int i = 0; i<tables.length; i++ ) {
+           listModel.addElement(tables[i]); 
+        }
+        
+        jListTables.setModel(listModel);
+        
+    }
+    
+    public void jListTablesShowOptions() {
+        jListTables.setEnabled(true);
+    }
+    
+    private void jButtonAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnulerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonAnnulerActionPerformed
+
+    private void jButtonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonValiderActionPerformed
 
     public void datePickerDateChanged(DateChangeEvent dateEvent) {
         dialog.handleDateSelectedEvent(dateEvent.getNewDate());
@@ -262,15 +312,17 @@ public class FrameReservation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.github.lgooddatepicker.components.DatePicker datePicker;
     private javax.swing.JPanel dateTimePanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton jButtonAnnuler;
+    private javax.swing.JButton jButtonValider;
     private javax.swing.JComboBox<String> jComboBoxHeure;
+    private javax.swing.JComboBox<String> jComboBoxPersonnes;
+    private javax.swing.JDialog jDialogConfirmation;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JList<String> jListTables;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel nbPersonsPanel;

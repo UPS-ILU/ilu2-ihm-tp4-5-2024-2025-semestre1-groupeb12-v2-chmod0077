@@ -8,8 +8,11 @@ public class InterfaceNoyauFonctionnel {
         return new String[]{"Table 1", "Table 2", "Table 3", "Table 4", "Table 5", "Table 6"};
     }
     
-    public String[] trouverHeureSelonDate( LocalDate date ) {
+    public String[] trouverHeureSelonDate(LocalDate date) {
         return new String[]{ "11h30", "12h00", "12h30", "13h00", "13h30" };
     }
 
+    public String[] trouverPersonnesSelonHeure(String heure) {
+        return new String[]{"2", "3", "4", "5", "6", "7", "8"};
+    }
 }
