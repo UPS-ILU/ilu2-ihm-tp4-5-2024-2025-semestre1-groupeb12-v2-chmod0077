@@ -17,6 +17,8 @@ public class DialogReservation {
     private int jour;
     private int mois;
     private String time;
+    private int nbPersonnes;
+    private int numTable;
 
     public DialogReservation(InterfaceNoyauFonctionnel inf) {
         this.inf = inf;
@@ -47,14 +49,15 @@ public class DialogReservation {
     }
 
     public void handleNumOfPersonsSelectedEvent(int nbPersons) {
+        this.nbPersonnes = nbPersons;
         String[] tables = inf.trouverTableDisponible(this.jour, this.mois, nbPersons, this.time);
+        
         frameReservation.jListTablesValuesUpdated(tables);
         frameReservation.jListTablesShowOptions();
     }
 
     public void handleTableSelectedEvent(int numTable) {
-        //TODO
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.numTable = numTable;
     }
 
     public void handleCancelEvent() {
@@ -63,8 +66,7 @@ public class DialogReservation {
     }
 
     public void handleValidationEvent() {
-        //TODO
-        throw new UnsupportedOperationException("Not implemented yet");
+        javax.swing.JOptionPane.showMessageDialog(frameReservation, "Réservation validée pour le " + this.jour + "/" + this.mois + " à " + this.time + " pour " + this.nbPersonnes + " personnes à la table " + this.numTable + ".");
     }
 
     public static void main(String[] args) {

@@ -271,7 +271,7 @@ public class FrameReservation extends javax.swing.JFrame {
     }
     
     private void jComboBoxPersonnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPersonnesActionPerformed
-        dialog.handleNumOfPersonsSelectedEvent((int)jComboBoxPersonnes.getSelectedItem());
+        dialog.handleNumOfPersonsSelectedEvent(Integer.parseInt((String)jComboBoxPersonnes.getSelectedItem()));
     }//GEN-LAST:event_jComboBoxPersonnesActionPerformed
 
     public void jListTablesValuesUpdated(String[] tables) {
@@ -290,11 +290,12 @@ public class FrameReservation extends javax.swing.JFrame {
     }
     
     private void jButtonAnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnulerActionPerformed
-        // TODO add your handling code here:
+        dialog.handleCancelEvent();
     }//GEN-LAST:event_jButtonAnnulerActionPerformed
 
     private void jButtonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderActionPerformed
-        // TODO add your handling code here:
+        dialog.handleTableSelectedEvent(jListTables.getSelectedIndex());
+        dialog.handleValidationEvent();
     }//GEN-LAST:event_jButtonValiderActionPerformed
 
     public void datePickerDateChanged(DateChangeEvent dateEvent) {
